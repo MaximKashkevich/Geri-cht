@@ -1,0 +1,29 @@
+:root {
+	/* Цвета */
+	--white-color: #ffffff;
+	--primary-color: #dcca87;
+	--bg-primary: #dcca87;
+	--secondary-color: #your-color;
+	--text-color: #your-color;
+	--bg-def: #0c0b08;
+	
+
+	/* Размеры */
+	--logo-size: 44px;
+	--bold: 700
+	--max-width: 1920px;
+	--side-padding: clamp(20px, 3vw, 60px);
+
+	/* Шрифты */
+	--font-body: 'Cormorant Upright', serif;
+	--font-heading: 'Open Sans', sans-serif;
+
+	/* letter-spacing */
+	--space: 4%
+}
+
+body {
+	font-family: var(--font-body); /* Основной шрифт для текста */
+	font-weight: 400;
+	line-height: 1.6;
+}
