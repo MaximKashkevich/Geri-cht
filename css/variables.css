@@ -13,6 +13,7 @@
 	--bold: 700
 	--max-width: 1920px;
 	--side-padding: clamp(20px, 3vw, 60px);
+	--side-padding-double: clamp(40px, 6vw, 120px);
 
 	/* Шрифты */
 	--font-body: 'Cormorant Upright', serif;

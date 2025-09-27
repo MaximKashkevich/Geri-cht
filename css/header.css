@@ -7,20 +7,66 @@ header {
 	margin: 0 auto;
 	width: 100%;
 	box-sizing: border-box;
+	opacity: 0;
+	transform: translateY(-30px);
+	animation: gentleHeaderSlideDown 1s ease-out 0.5s forwards;
 }
 
+/* Анимация появления header */
+@keyframes gentleHeaderSlideDown {
+	0% {
+		opacity: 0;
+		transform: translateY(-30px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* Логотип с анимацией */
 h1 {
 	color: var(--white-color);
 	font-size: var(--logo-size);
 	text-transform: uppercase;
+	opacity: 0;
+	transform: translateX(-20px);
+	animation: gentleFadeInRight 0.8s ease-out 0.8s forwards;
 }
 
+@keyframes gentleFadeInRight {
+	0% {
+		opacity: 0;
+		transform: translateX(-20px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+/* Навигация с анимацией */
 ul {
 	display: flex;
 	align-items: center;
 	gap: 32px;
+	opacity: 0;
+	transform: translateY(15px);
+	animation: gentleFadeInUp 0.8s ease-out 1s forwards;
 }
 
+@keyframes gentleFadeInUp {
+	0% {
+		opacity: 0;
+		transform: translateY(15px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* Ссылки с улучшенными анимациями */
 a {
 	font-family: var(--font-heading);
 	text-decoration: none;
@@ -28,17 +74,36 @@ a {
 	letter-spacing: var(--space);
 	line-height: 175%;
 	opacity: 0.7;
+	position: relative;
+	transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+a::after {
+	content: '';
+	position: absolute;
+	bottom: -5px;
+	left: 0;
+	width: 0;
+	height: 1px;
+	background: linear-gradient(90deg, var(--primary-color), var(--white-color));
+	transition: width 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 a:hover {
 	opacity: 1;
 	color: var(--white-color);
-	transition: all 0.3s ease;
+	transform: translateY(-2px);
+}
+
+a:hover::after {
+	width: 100%;
 }
 
 .menu span:hover {
 	cursor: pointer;
 	opacity: 0.9;
+	transform: translateY(-1px);
+	transition: all 0.3s ease;
 }
 
 span {
@@ -46,12 +111,28 @@ span {
 	font-family: var(--font-heading);
 }
 
+/* Меню с анимацией */
 .menu {
 	display: flex;
 	align-items: center;
 	gap: 50px;
+	opacity: 0;
+	transform: translateX(20px);
+	animation: gentleFadeInLeft 0.8s ease-out 1.2s forwards;
 }
 
+@keyframes gentleFadeInLeft {
+	0% {
+		opacity: 0;
+		transform: translateX(20px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+/* Разделитель с анимацией */
 .border {
 	width: 1px;
 	height: 40px;
@@ -62,6 +143,20 @@ span {
 		#ffffff 80%,
 		transparent 100%
 	);
+	opacity: 0;
+	transform: scaleY(0);
+	animation: gentleScaleYIn 0.6s ease-out 1.4s forwards;
+}
+
+@keyframes gentleScaleYIn {
+	0% {
+		opacity: 0;
+		transform: scaleY(0);
+	}
+	100% {
+		opacity: 1;
+		transform: scaleY(1);
+	}
 }
 
 .block {
@@ -70,6 +165,7 @@ span {
 	height: 100vh;
 }
 
+/* Бургер-меню с анимацией */
 .burger-menu {
 	display: none;
 	flex-direction: column;
@@ -78,12 +174,16 @@ span {
 	cursor: pointer;
 	padding: 8px;
 	gap: 8px;
+	opacity: 0;
+	transform: translateX(20px);
+	animation: gentleFadeInLeft 0.8s ease-out 1.4s forwards;
 }
 
 .burger-menu span {
 	width: 25px;
 	height: 2px;
 	background-color: var(--white-color);
+	transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .burger-menu.active span:nth-child(1) {
@@ -99,6 +199,7 @@ span {
 	transform: rotate(-45deg) translate(6px, -6px);
 }
 
+/* Адаптивность */
 @media (max-width: 1080px) {
 	a {
 		font-size: 14px;
@@ -114,6 +215,7 @@ span {
 		position: relative;
 		z-index: 1001;
 		background-color: var(--bg-def);
+		animation: gentleHeaderSlideDown 1s ease-out 0.3s forwards;
 	}
 
 	/* Бургер-меню в стиле Gericht */
@@ -131,6 +233,7 @@ span {
 		gap: 5px;
 		transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 		backdrop-filter: blur(12px);
+		animation: gentleFadeInLeft 0.8s ease-out 0.9s forwards;
 	}
 
 	.burger-menu:hover {
@@ -173,10 +276,12 @@ span {
 
 	.menu {
 		order: 2;
+		animation: gentleFadeInLeft 0.8s ease-out 0.7s forwards;
 	}
 
 	.logo {
 		order: 1;
+		animation: gentleFadeInRight 0.8s ease-out 0.5s forwards;
 	}
 
 	/* Боковое меню в стиле Gericht */
@@ -221,9 +326,11 @@ span {
 	nav ul {
 		flex-direction: column;
 		gap: 40px;
-		text-align: center;
 		width: 100%;
 		padding: 0 40px;
+		animation: none;
+		opacity: 1;
+		transform: none;
 	}
 
 	nav ul li {
@@ -298,6 +405,18 @@ span {
 
 	nav.active {
 		right: 0;
+		animation: slideInFromRight 0.6s ease-out forwards;
+	}
+
+	@keyframes slideInFromRight {
+		0% {
+			right: -100%;
+			opacity: 0;
+		}
+		100% {
+			right: 0;
+			opacity: 1;
+		}
 	}
 
 	/* Затемнение фона в стиле Gericht */
@@ -322,6 +441,16 @@ span {
 	.nav-overlay.active {
 		opacity: 1;
 		visibility: visible;
+		animation: gentleFadeIn 0.4s ease-out forwards;
+	}
+
+	@keyframes gentleFadeIn {
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
 	}
 
 	/* Декоративная линия в меню */
@@ -480,5 +609,22 @@ span {
 
 	.menu {
 		gap: 5px !important;
+	}
+}
+
+/* Отключение анимаций для пользователей, которые их не хотят */
+@media (prefers-reduced-motion: reduce) {
+	header,
+	h1,
+	ul,
+	.menu,
+	.border,
+	.burger-menu,
+	nav,
+	.nav-overlay {
+		animation: none !important;
+		transition: none !important;
+		opacity: 1;
+		transform: none;
 	}
 }
