@@ -1,4 +1,5 @@
-.hero__wrapper {
+/* hero.css */
+.block .hero__wrapper {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -6,6 +7,8 @@
 	gap: 40px;
 	opacity: 0;
 	animation: gentleFadeIn 1.2s ease-in-out 0.2s forwards;
+	max-width: 100%;
+	box-sizing: border-box;
 }
 
 .hero {
@@ -14,14 +17,17 @@
 	justify-content: center;
 	flex: 1;
 	max-width: none;
+	width: 100%;
 }
 
 .hero__image {
 	flex: 1;
 	display: flex;
 	justify-content: center;
+	align-items: center;
 	opacity: 0;
 	animation: gentleSlideIn 1s ease-out 0.4s forwards;
+	width: 100%;
 }
 
 .hero__image img {
@@ -30,6 +36,7 @@
 	max-height: 400px;
 	object-fit: contain;
 	transition: transform 0.8s ease;
+	width: auto;
 }
 
 .hero__image img:hover {
@@ -43,6 +50,7 @@
 	opacity: 0;
 	transform: translateY(15px);
 	animation: gentleSlideUp 0.8s ease-out 0.6s forwards;
+	width: 100%;
 }
 
 .hero__divider {
@@ -53,6 +61,7 @@
 	transform: scaleX(0);
 	transform-origin: left;
 	animation: gentleScaleIn 0.6s ease-out 0.8s forwards;
+	margin: 10px 0;
 }
 
 .hero__title {
@@ -64,6 +73,10 @@
 	opacity: 0;
 	transform: translateY(20px);
 	animation: gentleSlideUp 0.9s ease-out 1s forwards;
+	margin: 10px 0;
+	width: 100%;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
 }
 
 .hero__description {
@@ -74,6 +87,9 @@
 	opacity: 0;
 	transform: translateY(15px);
 	animation: gentleSlideUp 0.8s ease-out 1.2s forwards;
+	width: 100%;
+	max-width: 100%;
+	box-sizing: border-box;
 }
 
 .hero__button.button {
@@ -95,6 +111,7 @@
 	transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 	position: relative;
 	overflow: hidden;
+	box-sizing: border-box;
 }
 
 .hero__button.button::before {
@@ -201,25 +218,102 @@
 	}
 }
 
-/* Адаптивность */
-@media (max-width: 768px) {
-	.hero__wrapper {
+/* Адаптивность для экранов до 550px */
+@media (max-width: 550px) {
+	.block .hero__wrapper {
 		flex-direction: column;
+		align-items: center;
+		justify-content: flex-start;
+		padding: 20px 15px;
 		gap: 30px;
 		text-align: center;
+		min-height: auto;
+		overflow: hidden;
+	}
+
+	.hero {
+		align-items: center;
+		width: 100%;
+		order: 2;
 	}
 
 	.hero__image {
 		animation: gentleFadeUp 1s ease-out 0.4s forwards;
+		order: 1;
+		width: 100%;
+		max-width: 300px;
+		margin: 0 auto;
+	}
+
+	.hero__image img {
+		max-height: 250px;
+		width: 100%;
+		height: auto;
 	}
 
 	.hero__divider {
-		margin: 0 auto;
+		margin: 10px auto;
 		transform-origin: center;
+	}
+
+	.hero__title {
+		font-size: clamp(32px, 8vw, 40px);
+		line-height: 1.1;
+		margin: 8px 0;
+		text-align: center;
+	}
+
+	.hero__subtitle {
+		font-size: 16px;
+		text-align: center;
+	}
+
+	.hero__description {
+		font-size: 14px;
+		line-height: 1.5;
+		margin-bottom: 20px;
+		text-align: center;
+		padding: 0 10px;
+		display: none; /* Скрываем описание на маленьких экранах */
 	}
 
 	.hero__button.button {
 		align-self: center;
+		padding: 12px 24px;
+		min-width: 140px;
+		font-size: 14px;
+		margin: 0 auto;
+		width: auto;
+	}
+}
+
+/* Дополнительная адаптивность для очень маленьких экранов */
+@media (max-width: 380px) {
+	.block .hero__wrapper {
+		padding: 15px 10px;
+		gap: 25px;
+	}
+
+	.hero__image {
+		max-width: 250px;
+	}
+
+	.hero__image img {
+		max-height: 200px;
+	}
+
+	.hero__title {
+		font-size: 28px;
+	}
+
+	.hero__subtitle {
+		font-size: 15px;
+	}
+
+	.hero__button.button {
+		padding: 10px 20px;
+		min-width: 130px;
+		font-size: 13px;
 	}
 }
 

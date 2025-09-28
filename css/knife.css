@@ -1,0 +1,194 @@
+.block-two {
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	background-image: url(../images/BgKnife.png);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	overflow: hidden;
+}
+
+.G {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 1;
+	opacity: 0.7;
+	width: 100%;
+	height: auto;
+	max-width: clamp(250px, 40vw, 391px);
+}
+
+.knife-img {
+	width: 100%;
+	height: auto;
+	max-width: clamp(30px, 4vw, 60px);
+}
+
+.knife-block {
+	position: absolute;
+	z-index: 100;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	gap: clamp(30px, 5vw, 50px);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: clamp(300px, 80%, 1000px);
+	padding: 0 20px;
+}
+
+.about-us {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	gap: clamp(8px, 1.5vw, 15px);
+	text-align: right;
+	flex: 1;
+}
+
+.knife-block h2 {
+	font-size: clamp(32px, 6vw, 64px);
+	color: var(--bg-primary);
+	font-weight: 600;
+	letter-spacing: 0.03em;
+	line-height: 1.2;
+	margin: 0;
+	text-align: inherit;
+}
+
+.knife-block p {
+	color: #aaaaaa;
+	line-height: 1.6;
+	letter-spacing: var(--space);
+	margin: 0;
+	max-width: min(400px, 90vw);
+	font-size: clamp(14px, 1.8vw, 16px);
+}
+
+.knife-block button {
+	padding: clamp(10px, 2vw, 12px) clamp(20px, 3vw, 24px);
+	color: #0c0c0c;
+	background-color: var(--bg-primary);
+	text-decoration: none;
+	border: none;
+	font-family: var(--font-body);
+	font-weight: var(--bold);
+	cursor: pointer;
+	border-radius: 2px;
+	transition: all 0.3s ease;
+	font-size: clamp(14px, 1.8vw, 16px);
+	white-space: nowrap;
+}
+
+.knife-block button:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 4px 12px rgba(220, 202, 135, 0.3);
+}
+
+.our-history {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: clamp(8px, 1.5vw, 15px);
+	text-align: left;
+	flex: 1;
+}
+
+/* 📱 ПЛАНШЕТЫ (768px - 997px) */
+@media (max-width: 997px) {
+	.knife-block {
+		flex-direction: column;
+		gap: 40px;
+		width: 90%;
+	}
+
+	.about-us,
+	.our-history {
+		align-items: center;
+		text-align: center;
+		gap: 15px;
+	}
+
+	.knife-img {
+		order: -1;
+		margin-bottom: 20px;
+		max-width: clamp(40px, 6vw, 70px);
+	}
+}
+
+/* 📱 ТЕЛЕФОНЫ (480px - 768px) */
+@media (max-width: 768px) {
+	.block-two {
+		height: auto;
+		min-height: 100vh;
+		padding: 80px 0;
+	}
+
+	.knife-block {
+		position: relative;
+		top: auto;
+		left: auto;
+		transform: none;
+		margin: 0 auto;
+	}
+
+	.G {
+		position: relative;
+		top: auto;
+		left: auto;
+		transform: none;
+		margin: 0 auto 40px;
+	}
+
+	.knife-block h2 {
+		font-size: clamp(28px, 8vw, 48px);
+	}
+}
+
+/* 📱 МАЛЕНЬКИЕ ТЕЛЕФОНЫ (до 480px) */
+@media (max-width: 480px) {
+	.block-two {
+		padding: 60px 0;
+	}
+
+	.knife-block {
+		width: 95%;
+		gap: 30px;
+		padding: 0 15px;
+	}
+
+	.about-us,
+	.our-history {
+		gap: 12px;
+	}
+
+	.knife-block p {
+		max-width: 100%;
+		line-height: 1.5;
+	}
+
+	.knife-img {
+		max-width: clamp(35px, 8vw, 50px);
+		margin-bottom: 15px;
+	}
+
+	.G {
+		max-width: clamp(200px, 50vw, 280px);
+		margin-bottom: 30px;
+	}
+}
+
+/* ♿ Доступность - отключение анимаций */
+@media (prefers-reduced-motion: reduce) {
+	.knife-block button {
+		transition: none;
+	}
+
+	.knife-block button:hover {
+		transform: none;
+	}
+}
