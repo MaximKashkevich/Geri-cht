@@ -1,0 +1,76 @@
+.block-three {
+	background-image: url(../images/BGKITAEC.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 100%;
+	height: 100vh;
+}
+
+.shef {
+	width: 100%;
+	height: auto;
+	max-width: 400px;
+}
+
+.shef-block {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	gap: 50px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.about-shef {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 10px;
+}
+
+.about-shef span {
+	font-size: 23px;
+	font-weight: var(--bold);
+	line-height: 130%;
+	letter-spacing: var(--space);
+	font-family: var(--font-body);
+}
+
+.about-shef h2 {
+	font-size: 64px;
+	font-weight: 600;
+	color: var(--primary-color);
+	line-height: 130%;
+	letter-spacing: 3%;
+}
+
+.about-shef p {
+	line-height: 175%;
+	letter-spacing: var(--space);
+	font-style: italic;
+	color: #aaaaaa;
+}
+
+.quote p::before {
+	content: '“';
+	font-size: 5rem;
+	margin-right: 4px 4px;
+	vertical-align: top;
+}
+
+.about-shef {
+	max-width: min(500px, 90vw);
+}
+
+.shef-name h3 {
+	font-size: 32px;
+	color: var(--primary-color);
+	line-height: 130%;
+	letter-spacing: 3%;
+}
+
+.shef-name {
+	margin: 10px 0;
+}

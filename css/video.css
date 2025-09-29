@@ -1,0 +1,8 @@
+.block-four {
+	background-image: url(../images/Video.png);
+	width: 100%;
+	height: 100vh;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}

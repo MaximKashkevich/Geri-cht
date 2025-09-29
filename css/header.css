@@ -12,7 +12,6 @@ header {
 	animation: gentleHeaderSlideDown 1s ease-out 0.5s forwards;
 }
 
-/* Анимация появления header */
 @keyframes gentleHeaderSlideDown {
 	0% {
 		opacity: 0;
@@ -24,7 +23,6 @@ header {
 	}
 }
 
-/* Логотип с анимацией */
 h1 {
 	color: var(--white-color);
 	font-size: var(--logo-size);
@@ -45,7 +43,6 @@ h1 {
 	}
 }
 
-/* Навигация с анимацией */
 ul {
 	display: flex;
 	align-items: center;
@@ -66,7 +63,6 @@ ul {
 	}
 }
 
-/* Ссылки с улучшенными анимациями */
 a {
 	font-family: var(--font-heading);
 	text-decoration: none;
@@ -111,7 +107,6 @@ span {
 	font-family: var(--font-heading);
 }
 
-/* Меню с анимацией */
 .menu {
 	display: flex;
 	align-items: center;
@@ -132,7 +127,6 @@ span {
 	}
 }
 
-/* Разделитель с анимацией */
 .border {
 	width: 1px;
 	height: 40px;
@@ -165,7 +159,6 @@ span {
 	height: 100vh;
 }
 
-/* Бургер-меню с анимацией */
 .burger-menu {
 	display: none;
 	flex-direction: column;
@@ -199,7 +192,6 @@ span {
 	transform: rotate(-45deg) translate(6px, -6px);
 }
 
-/* Адаптивность */
 @media (max-width: 1080px) {
 	a {
 		font-size: 14px;
@@ -218,7 +210,6 @@ span {
 		animation: gentleHeaderSlideDown 1s ease-out 0.3s forwards;
 	}
 
-	/* Бургер-меню в стиле Gericht */
 	.burger-menu {
 		display: flex;
 		order: 3;
@@ -251,7 +242,6 @@ span {
 		transform-origin: center;
 	}
 
-	/* Анимация бургера в крестик в золотых тонах */
 	.burger-menu.active {
 		background: rgba(220, 202, 135, 0.1);
 		border-color: rgba(220, 202, 135, 0.3);
@@ -284,7 +274,6 @@ span {
 		animation: gentleFadeInRight 0.8s ease-out 0.5s forwards;
 	}
 
-	/* Боковое меню в стиле Gericht */
 	nav {
 		display: flex;
 		position: fixed;
@@ -344,7 +333,6 @@ span {
 		transform: translateX(0);
 	}
 
-	/* Задержка для появления пунктов меню */
 	nav.active ul li:nth-child(1) {
 		transition-delay: 0.15s;
 	}
@@ -419,7 +407,6 @@ span {
 		}
 	}
 
-	/* Затемнение фона в стиле Gericht */
 	.nav-overlay {
 		position: fixed;
 		top: 0;
@@ -453,7 +440,6 @@ span {
 		}
 	}
 
-	/* Декоративная линия в меню */
 	nav::after {
 		content: '';
 		position: absolute;
@@ -471,12 +457,10 @@ span {
 }
 
 @media (max-width: 570px) {
-	/* Уменьшаем отступы в хедере */
 	header {
 		padding: 20px 15px;
 	}
 
-	/* Уменьшаем логотип */
 	.logo {
 		position: relative;
 		z-index: 1003;
@@ -485,22 +469,18 @@ span {
 		color: var(--primary-color);
 	}
 
-	/* Уменьшаем текст в меню */
 	.menu span {
 		font-size: 12px !important;
 	}
 
-	/* Уменьшаем отступы между элементами меню */
 	.menu {
 		gap: 15px !important;
 	}
 
-	/* Уменьшаем высоту разделительной линии */
 	.border {
 		height: 30px;
 	}
 
-	/* Адаптируем бургер-меню */
 	.burger-menu {
 		padding: 10px 8px !important;
 	}
@@ -510,42 +490,35 @@ span {
 		height: 1.5px !important;
 	}
 
-	/* Боковое меню на весь экран */
 	nav {
 		width: 100vw !important;
 		padding-top: 100px !important;
 	}
 
-	/* Уменьшаем отступы в меню */
 	nav ul {
 		padding: 0 20px !important;
 		gap: 25px !important;
 	}
 
-	/* Уменьшаем размер ссылок в меню */
 	nav a {
 		font-size: 18px !important;
 		padding: 12px 20px !important;
 	}
 
-	/* Адаптируем декоративную линию */
 	nav::after {
 		top: 90px !important;
 		left: 20px !important;
 		right: 20px !important;
 	}
 
-	/* Уменьшаем отступы для пунктов меню */
 	nav ul li {
 		transform: translateX(30px) !important;
 	}
 
-	/* Адаптируем ховер-эффекты для маленьких экранов */
 	nav a:hover {
 		transform: translateX(5px) !important;
 	}
 
-	/* Улучшаем отображение на очень маленьких экранах */
 	@media (max-width: 380px) {
 		header {
 			padding: 15px 10px;
@@ -581,7 +554,6 @@ span {
 		}
 	}
 
-	/* Портретная ориентация на мобильных */
 	@media (max-height: 600px) and (max-width: 570px) {
 		nav {
 			padding-top: 80px !important;
@@ -612,7 +584,6 @@ span {
 	}
 }
 
-/* Отключение анимаций для пользователей, которые их не хотят */
 @media (prefers-reduced-motion: reduce) {
 	header,
 	h1,

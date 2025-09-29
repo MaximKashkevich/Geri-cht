@@ -12,3 +12,23 @@ navMenu.addEventListener('click', function (e) {
 		navMenu.classList.remove('active')
 	}
 })
+
+document.addEventListener('DOMContentLoaded', () => {
+	const targets = document.querySelectorAll(
+		'.block-two, .G, .knife-block, .about-us, .our-history, .knife-block p, .knife-block button'
+	)
+
+	const observer = new IntersectionObserver(
+		entries => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					entry.target.classList.add('animate')
+					observer.unobserve(entry.target) // запускаем только 1 раз
+				}
+			})
+		},
+		{ threshold: 0.3 }
+	)
+
+	targets.forEach(el => observer.observe(el))
+})

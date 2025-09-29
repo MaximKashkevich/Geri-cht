@@ -3,6 +3,10 @@
 @import url('./header.css');
 @import url('./hero.css');
 @import url('./knife.css');
+@import url('./shef.css');
+@import url('./video.css');
+@import url('./OurLaurels.css');
+
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@300;400;500;600;700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
 body {
@@ -11,23 +15,24 @@ body {
 }
 
 html {
-	scrollbar-width: none; /* Для Firefox */
-	-ms-overflow-style: none; /* Для Internet Explorer и Edge */
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+	scroll-behavior: smooth;
 }
 
 html::-webkit-scrollbar {
-	display: none; /* Для Chrome, Safari и Opera */
+	display: none;
 }
 
 body {
-	-ms-overflow-style: none; /* Дублируем для IE */
-	scrollbar-width: none; /* Дублируем для Firefox */
+	-ms-overflow-style: none;
+	scrollbar-width: none;
 	font-weight: 400;
 	line-height: 1.6;
 }
 
 body::-webkit-scrollbar {
-	display: none; /* Дублируем для Webkit браузеров */
+	display: none;
 }
 
 h1,
