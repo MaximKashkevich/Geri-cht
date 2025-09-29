@@ -6,22 +6,308 @@
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
+	opacity: 0;
+	transform: translateY(30px);
+	transition: all 0.8s ease-out;
+}
+
+.block-five.animated {
+	opacity: 1;
+	transform: translateY(0);
 }
 
 .laurels-block {
 	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 15px; /* Еще ближе */
+	width: 100%;
+	max-width: 1050px; /* Уже контейнер */
+	margin: 0 auto;
+	padding: 0 15px; /* Минимальные отступы */
+	height: 100vh;
 }
 
-.laurels-block img {
+.laurels {
 	width: 100%;
-	height: 500px;
-	max-width: 500px;
+	height: auto;
+	max-width: 380px; /* Еще меньше изображение */
+	opacity: 0;
+	transform: translateX(50px);
+	transition: all 0.8s ease-out 0.4s;
+}
+
+.block-five.animated .laurels {
+	opacity: 1;
+	transform: translateX(0);
 }
 
 .our-laurels-block {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	gap: 20px;
-	padding-left: 50px;
+	gap: 20px; /* Еще ближе заголовок и рейтинги */
+	max-width: 480px; /* Уже блок контента */
+	opacity: 0;
+	transform: translateX(-50px);
+	transition: all 0.8s ease-out 0.2s;
+}
+
+.block-five.animated .our-laurels-block {
+	opacity: 1;
+	transform: translateX(0);
+}
+
+.awards {
+	display: flex;
+	flex-direction: column;
+	gap: 6px; /* Почти вплотную */
+}
+
+.awards span {
+	font-weight: var(--bold);
+	font-size: 23px;
+	font-family: var(--font-body);
+	opacity: 0;
+	transform: translateY(20px);
+	transition: all 0.6s ease-out 0.5s;
+}
+
+.awards h2 {
+	font-size: 64px;
+	font-weight: 600;
+	color: var(--primary-color);
+	line-height: 130%;
+	letter-spacing: 3%;
+	margin: 0;
+	opacity: 0;
+	transform: translateY(20px);
+	transition: all 0.6s ease-out 0.6s;
+}
+
+.awards img {
+	width: 50px;
+	height: 50px;
+	opacity: 0;
+	transform: translateY(20px);
+	transition: all 0.6s ease-out 0.55s;
+}
+
+.block-five.animated .awards span,
+.block-five.animated .awards h2,
+.block-five.animated .awards img {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+.ratings {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 20px; /* Минимальное расстояние между карточками */
+	align-items: start;
+	justify-items: start;
+}
+
+.first-line,
+.second-line {
+	display: contents;
+}
+
+/* Увеличенные иконки для first, second, fifth, third */
+.first-block img,
+.second-block img,
+.fifth-block img,
+.third-block img {
+	width: 55px; /* Увеличил иконки */
+	height: 55px;
+	flex-shrink: 0;
+	transition: transform 0.3s ease; /* Легкий ховер-эффект */
+}
+
+.first-block img:hover,
+.second-block img:hover,
+.fifth-block img:hover,
+.third-block img:hover {
+	transform: scale(1.1);
+}
+
+/* Анимация для блоков с наградами */
+.second-block,
+.first-block,
+.fifth-block,
+.third-block {
+	display: flex;
+	align-items: flex-start;
+	gap: 10px; /* Минимальное расстояние между иконкой и текстом */
+	opacity: 0;
+	transform: translateY(25px);
+	transition: all 0.6s ease-out;
+}
+
+/* Задержки для последовательного появления */
+.block-five.animated .first-block {
+	transition-delay: 0.7s;
+}
+.block-five.animated .second-block {
+	transition-delay: 0.8s;
+}
+.block-five.animated .third-block {
+	transition-delay: 0.9s;
+}
+.block-five.animated .fifth-block {
+	transition-delay: 1s;
+}
+
+.block-five.animated .second-block,
+.block-five.animated .first-block,
+.block-five.animated .fifth-block,
+.block-five.animated .third-block {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+.second-block div,
+.first-block div,
+.fifth-block div,
+.third-block div {
+	display: flex;
+	flex-direction: column;
+	gap: 3px; /* Почти вплотную заголовок и текст */
+}
+
+.second-block div span,
+.first-block div span,
+.fifth-block div span,
+.third-block div span {
+	color: var(--primary-color);
+	font-size: 20px; /* Немного меньше шрифт */
+	font-weight: var(--bold);
+	line-height: 130%;
+	text-align: left;
+	opacity: 0;
+	transform: translateX(10px);
+	transition: all 0.4s ease-out 0.2s;
+}
+
+.second-block div p,
+.first-block div p,
+.fifth-block div p,
+.third-block div p {
+	text-align: left;
+	color: #aaaaaa;
+	line-height: 130%;
+	margin: 0;
+	font-size: 14px;
+	opacity: 0;
+	transform: translateX(10px);
+	transition: all 0.4s ease-out 0.3s;
+}
+
+.block-five.animated .second-block div span,
+.block-five.animated .first-block div span,
+.block-five.animated .fifth-block div span,
+.block-five.animated .third-block div span,
+.block-five.animated .second-block div p,
+.block-five.animated .first-block div p,
+.block-five.animated .fifth-block div p,
+.block-five.animated .third-block div p {
+	opacity: 1;
+	transform: translateX(0);
+}
+
+/* Адаптивность */
+@media (max-width: 1200px) {
+	.laurels-block {
+		padding: 0 15px;
+		gap: 12px; /* Еще ближе на планшетах */
+	}
+
+	.ratings {
+		gap: 18px;
+	}
+}
+
+@media (max-width: 1024px) {
+	.laurels-block {
+		flex-direction: column;
+		justify-content: center;
+		gap: 25px; /* Минимальное расстояние в колонке */
+		height: auto;
+		min-height: 100vh;
+		padding: 40px 15px;
+	}
+
+	.our-laurels-block {
+		max-width: 100%;
+		text-align: center;
+	}
+
+	.ratings {
+		justify-items: center;
+	}
+
+	.awards {
+		align-items: center;
+	}
+}
+
+@media (max-width: 768px) {
+	.ratings {
+		grid-template-columns: 1fr;
+		gap: 18px; /* Минимальное расстояние в мобильной версии */
+	}
+
+	.awards h2 {
+		font-size: 48px;
+	}
+
+	.laurels-block {
+		padding: 30px 10px;
+		gap: 20px;
+	}
+
+	.first-block img,
+	.second-block img,
+	.fifth-block img,
+	.third-block img {
+		width: 50px; /* Немного меньше на мобильных */
+		height: 50px;
+	}
+}
+
+@media (max-width: 480px) {
+	.awards h2 {
+		font-size: 36px;
+	}
+
+	.second-block div span,
+	.first-block div span,
+	.fifth-block div span,
+	.third-block div span {
+		font-size: 18px;
+	}
+
+	.ratings {
+		gap: 15px;
+	}
+
+	.second-block,
+	.first-block,
+	.fifth-block,
+	.third-block {
+		gap: 8px;
+	}
+
+	.laurels-block {
+		gap: 18px;
+		padding: 25px 8px;
+	}
+
+	.first-block img,
+	.second-block img,
+	.fifth-block img,
+	.third-block img {
+		width: 45px;
+		height: 45px;
+	}
 }

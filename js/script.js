@@ -32,3 +32,46 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	targets.forEach(el => observer.observe(el))
 })
+
+document.addEventListener('DOMContentLoaded', function () {
+	const block = document.querySelector('.block-three')
+
+	const observer = new IntersectionObserver(
+		entries => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					entry.target.classList.add('animated')
+				}
+			})
+		},
+		{
+			threshold: 0.3,
+		}
+	)
+
+	observer.observe(block)
+})
+
+function initBlockFiveAnimation() {
+	const blockFive = document.querySelector('.block-five')
+
+	const observer = new IntersectionObserver(
+		entries => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					entry.target.classList.add('animated')
+				}
+			})
+		},
+		{
+			threshold: 0.3,
+		}
+	)
+
+	if (blockFive) {
+		observer.observe(blockFive)
+	}
+}
+
+// Запуск при загрузке страницы
+document.addEventListener('DOMContentLoaded', initBlockFiveAnimation)
