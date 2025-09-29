@@ -1,0 +1,127 @@
+.block-seven {
+	position: relative;
+	width: 100%;
+	min-height: 100vh; /* вместо фиксированного height */
+	background-image: url(../images/BGKITAEC.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 40px 20px; /* чтобы не прилипало к краям */
+	box-sizing: border-box;
+}
+
+.find-us-img {
+	width: 100%;
+	height: auto;
+	max-width: 450px;
+	border-radius: 12px;
+}
+
+.find-us-section {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 50px; /* меньше на базовых экранах */
+	max-width: 1200px;
+	width: 100%;
+}
+
+@media (min-width: 1200px) {
+	.find-us-section {
+		gap: 200px; /* больше только на больших экранах */
+	}
+}
+
+@media (max-width: 768px) {
+	.find-us-section {
+		flex-direction: column;
+		text-align: center;
+	}
+	.find-us-text-block {
+		align-items: center;
+	}
+	.find-us-header,
+	.find-us-main {
+		align-items: center;
+	}
+}
+
+.find-us-text-block {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 15px;
+	max-width: 400px;
+}
+
+.find-us-header {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	flex-wrap: nowrap;
+	gap: 10px;
+}
+
+.find-us-header span {
+	font-size: 23px;
+	font-weight: 700; /* исправлено */
+	line-height: 130%;
+	color: #ffffff;
+	font-family: var(--font-body);
+}
+
+.find-us-header h2 {
+	font-size: 64px;
+	font-weight: 600;
+	line-height: 130%;
+	font-family: var(--font-body);
+	color: var(--primary-color);
+}
+
+.find-us-main {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.find-us-description {
+	font-size: 16px;
+	color: #aaaaaa;
+	line-height: 1.6;
+	font-family: var(--font-heading);
+	max-width: 400px;
+}
+
+.find-us-main h3 {
+	font-size: 20px;
+	font-weight: 600;
+	color: #ffffff;
+	font-family: var(--font-body);
+	margin-bottom: 10px;
+}
+
+.find-us-main ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	align-items: flex-start; /* сбросили центрирование */
+}
+
+.find-us-main li {
+	font-size: 16px;
+	color: #dddddd;
+	line-height: 1.6;
+	font-family: var(--font-heading);
+}
+
+.find-us-main li strong {
+	color: var(--primary-color);
+	font-weight: 600;
+	margin-right: 6px;
+}

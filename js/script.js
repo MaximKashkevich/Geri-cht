@@ -73,5 +73,25 @@ function initBlockFiveAnimation() {
 	}
 }
 
-// Запуск при загрузке страницы
 document.addEventListener('DOMContentLoaded', initBlockFiveAnimation)
+
+const menuObserver = new IntersectionObserver(
+	entries => {
+		entries.forEach(entry => {
+			if (entry.isIntersecting) {
+				entry.target.classList.add('visible')
+				entry.target
+					.querySelectorAll('.menu-column')
+					.forEach(col => col.classList.add('visible'))
+				const centerImage = entry.target.querySelector('.menu-center-image')
+				if (centerImage) centerImage.classList.add('visible')
+				menuObserver.unobserve(entry.target)
+			}
+		})
+	},
+	{ threshold: 0.2 }
+)
+
+document.querySelectorAll('.animate-up').forEach(el => {
+	menuObserver.observe(el)
+})
