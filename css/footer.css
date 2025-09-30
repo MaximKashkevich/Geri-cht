@@ -1,0 +1,107 @@
+.footer {
+	position: relative;
+	width: 100%;
+	min-height: 70vh;
+	background-image: url(../images/BGKITAEC.png);
+	background-size: cover;
+	background-position: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.footer-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 50px;
+	max-width: 1200px;
+	width: 90%;
+	padding: 0 20px;
+	margin: auto;
+}
+
+.final {
+	color: #aaaaaa;
+	text-align: center;
+	width: 100%;
+	padding: 30px 0;
+	margin-top: auto;
+}
+
+.card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
+	height: 100%;
+}
+
+.card h3 {
+	font-size: 32px;
+	line-height: 130%;
+	letter-spacing: 4%;
+	color: #f5efdb;
+	text-align: center;
+	margin: 0;
+}
+
+.card p {
+	color: #aaaaaa;
+	text-align: center;
+	margin: 5px 0;
+	line-height: 1.5;
+}
+
+.card h1 {
+	color: var(--primary-color);
+	font-size: 64px;
+	line-height: 130%;
+	text-align: center;
+	margin: 0;
+}
+
+.card:nth-child(2) p {
+	color: #f0f8ff; /* aliceblue */
+	font-style: italic;
+}
+
+.block-icons {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+}
+
+.footer-grid-text {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 768px) {
+	.footer-grid {
+		grid-template-columns: 1fr;
+		gap: 30px;
+		text-align: center;
+	}
+
+	.card h1 {
+		font-size: 48px;
+	}
+
+	.card h3 {
+		font-size: 28px;
+	}
+}
+
+/* Для планшетов */
+@media (max-width: 1024px) {
+	.footer-grid {
+		gap: 30px;
+		padding: 0 15px;
+	}
+
+	.card h1 {
+		font-size: 56px;
+	}
+}
